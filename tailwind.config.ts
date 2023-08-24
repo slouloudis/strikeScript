@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss'
+// const defaultTheme = require('tailwindcss/defaultTheme');
+
 
 const config: Config = {
   content: [
@@ -8,12 +10,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        iceland: ['var(--font-iceland)]'],
+        lexend: ['var(--font-lexendDeca)]'],
+        sixcaps: ['var(--font-six_caps)]'],
+        condiment: ['var(--font-condiment)'],
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero': `url('/background.png')`,
       },
     },
+    colors: {
+      'vDark-grey' : '#040404'  
+    }
   },
   plugins: [],
 }

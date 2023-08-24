@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* https://prismic.io/blog/nextjs-fonts */
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,12 +17,38 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html, body {
+  height: 100%;
+}
+/* -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ GRID STUFF -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.grid-rows-1fr3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-custom-rows {
+  grid-template-rows: 0.33fr 0.55fr 0.17fr;
+}
+/* -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ FONTS  -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.iceland-prose {
+  font-family: 'Iceland', sans-serif;
+  color: white;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.lexend-prose {
+  font-family: 'Lexend Deca', sans-serif;
+  /* ... */
+}
+
+.sixcaps-prose {
+  font-family: 'Six Caps', sans-serif;
+  /* ... */
+}
+
+.condiment-prose {
+  font-family: 'Condiment', sans-serif;
+  /* ... */
 }

@@ -1,8 +1,31 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Iceland, Lexend_Deca, Six_Caps, Condiment } from 'next/font/google';
+
+const iceland = Iceland({
+    weight: ['400'], 
+    variable: '--font-iceland',
+    subsets: ['latin'],
+  });
+
+const lexendDeca = Lexend_Deca({ 
+  subsets: ['latin'],
+  variable: '--font-lexendDeca'
+});
+
+const six_caps = Six_Caps({
+  weight: ['400'],
+  variable: '--font-six_caps', 
+  subsets: ['latin'],
+});
+
+const condiment = Condiment({
+    weight: ['400'],
+    variable: '--font-condiment',
+    subsets: ['latin'] 
+  });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +38,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${iceland.variable} ${lexendDeca.variable} ${six_caps.variable} ${condiment.variable}`}>
+        <body className='h-screen overscroll-y-none'>{children}</body>
+      </html>
+    </ClerkProvider>
   )
 }
