@@ -38,10 +38,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
       <html lang="en" className={`${iceland.variable} ${lexendDeca.variable} ${six_caps.variable} ${condiment.variable}`}>
-        <body className='h-screen overscroll-y-none'>{children}</body>
+        <body className='h-screen'>{children}</body>
       </html>
-    </ClerkProvider>
+    // </ClerkProvider>
   )
 }
+
+//overscroll-y-none next to h-screen
